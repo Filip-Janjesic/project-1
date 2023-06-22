@@ -32,7 +32,7 @@ Route.post('/about', () => {
   return 'About post'
 })
 
-Route.get('/posts/:id', ({ params }) => {
+Route.get('/posts/:id?', ({ params }) => {
   const { id } = params
   return 'Posts with id' + id
 })
