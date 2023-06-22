@@ -23,3 +23,16 @@ import Route from '@ioc:Adonis/Core/Route'
 Route.get('/', async ({ view }) => {
   return view.render('welcome')
 })
+
+Route.get('/about',() => {
+  return 'About page'
+})
+
+Route.post('/about', () => {
+  return 'About post'
+})
+
+Route.get('/posts/:id', ({ params }) => {
+  const { id } = params
+  return 'Posts with id' + id
+})
