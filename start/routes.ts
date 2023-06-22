@@ -19,6 +19,7 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+Route.where('id', Route.matchers.number())
 
 Route.get('/', async ({ view }) => {
   return view.render('welcome')
@@ -32,7 +33,8 @@ Route.post('/about', () => {
   return 'About post'
 })
 
-Route.get('/posts/:id?', ({ params }) => {
+Route.get('/posts/:id?', ({ params, request }) => {
+  console.log(request.all())
   const { id } = params
-  return 'Posts with id' + id
+  return 'Posts with id ' + id
 })
