@@ -25,13 +25,17 @@ Route.get('/', async ({ view }) => {
   return view.render('welcome')
 })
 
-Route.get('/about',() => {
-  return 'About page'
-})
 
-Route.post('/about', () => {
+
+Route.group(function () {
+  Route.get('/about',() => {
+    return 'About page'
+  })
+
+  Route.post('/about', () => {
   return 'About post'
-})
+  })
+}).prefix('/api')
 
 Route.get('/posts/:id?', ({ params, request }) => {
   console.log(request.all())
