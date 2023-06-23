@@ -37,6 +37,8 @@ Route.group(function () {
   })
 }).prefix('/api')
 
+Route.get('/posts', 'PostsController.index' )
+
 Route.get('/posts/:id?', ({ params, request }) => {
   console.log(request.all())
   const { id } = params
