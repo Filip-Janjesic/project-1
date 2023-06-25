@@ -1,7 +1,8 @@
 import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 
 export default class PostsController {
-    public index({response}:HttpContextContract){
-        return response.status(200).json('Okay it is working!')
+    public index = async ({ view }:HttpContextContract) => {
+        const html = await  view.render('posts/index')
+        return html
     }
 }
