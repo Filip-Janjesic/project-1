@@ -7,3 +7,4 @@ export default class PostsController {
         return html
     }
 }
+ 
